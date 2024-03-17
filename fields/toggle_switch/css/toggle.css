@@ -1,0 +1,870 @@
+.ef-toggle-switch html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+.ef-toggle-switch body {
+  margin: 0;
+}
+.ef-toggle-switch article,
+.ef-toggle-switch aside,
+.ef-toggle-switch details,
+.ef-toggle-switch figcaption,
+.ef-toggle-switch figure,
+.ef-toggle-switch footer,
+.ef-toggle-switch header,
+.ef-toggle-switch hgroup,
+.ef-toggle-switch main,
+.ef-toggle-switch nav,
+.ef-toggle-switch section,
+.ef-toggle-switch summary {
+  display: block;
+}
+.ef-toggle-switch audio,
+.ef-toggle-switch canvas,
+.ef-toggle-switch progress,
+.ef-toggle-switch video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+.ef-toggle-switch audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+.ef-toggle-switch [hidden],
+.ef-toggle-switch template {
+  display: none;
+}
+.ef-toggle-switch a {
+  background: transparent;
+}
+.ef-toggle-switch a:active,
+.ef-toggle-switch a:hover {
+  outline: 0;
+}
+.ef-toggle-switch abbr[title] {
+  border-bottom: 1px dotted;
+}
+.ef-toggle-switch b,
+.ef-toggle-switch strong {
+  font-weight: bold;
+}
+.ef-toggle-switch dfn {
+  font-style: italic;
+}
+.ef-toggle-switch h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.ef-toggle-switch mark {
+  background: #ff0;
+  color: #000;
+}
+.ef-toggle-switch small {
+  font-size: 80%;
+}
+.ef-toggle-switch sub,
+.ef-toggle-switch sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.ef-toggle-switch sup {
+  top: -0.5em;
+}
+.ef-toggle-switch sub {
+  bottom: -0.25em;
+}
+.ef-toggle-switch img {
+  border: 0;
+}
+.ef-toggle-switch svg:not(:root) {
+  overflow: hidden;
+}
+.ef-toggle-switch figure {
+  margin: 1em 40px;
+}
+.ef-toggle-switch hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+.ef-toggle-switch pre {
+  overflow: auto;
+}
+.ef-toggle-switch code,
+.ef-toggle-switch kbd,
+.ef-toggle-switch pre,
+.ef-toggle-switch samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+.ef-toggle-switch button,
+.ef-toggle-switch input,
+.ef-toggle-switch optgroup,
+.ef-toggle-switch select,
+.ef-toggle-switch textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+.ef-toggle-switch button {
+  overflow: visible;
+}
+.ef-toggle-switch button,
+.ef-toggle-switch select {
+  text-transform: none;
+}
+.ef-toggle-switch button,
+.ef-toggle-switch html input[type="button"],
+.ef-toggle-switch input[type="reset"],
+.ef-toggle-switch input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+.ef-toggle-switch button[disabled],
+.ef-toggle-switch html input[disabled] {
+  cursor: default;
+}
+.ef-toggle-switch button::-moz-focus-inner,
+.ef-toggle-switch input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.ef-toggle-switch input {
+  line-height: normal;
+}
+.ef-toggle-switch input[type="checkbox"],
+.ef-toggle-switch input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+.ef-toggle-switch input[type="number"]::-webkit-inner-spin-button,
+.ef-toggle-switch input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+.ef-toggle-switch input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.ef-toggle-switch input[type="search"]::-webkit-search-cancel-button,
+.ef-toggle-switch input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.ef-toggle-switch fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+.ef-toggle-switch legend {
+  border: 0;
+  padding: 0;
+}
+.ef-toggle-switch textarea {
+  overflow: auto;
+}
+.ef-toggle-switch optgroup {
+  font-weight: bold;
+}
+.ef-toggle-switch table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.ef-toggle-switch td,
+.ef-toggle-switch th {
+  padding: 0;
+}
+.ef-toggle-switch .btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.ef-toggle-switch .btn:focus,
+.ef-toggle-switch .btn:active:focus,
+.ef-toggle-switch .btn.active:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.ef-toggle-switch .btn:hover,
+.ef-toggle-switch .btn:focus {
+  color: #333333;
+  text-decoration: none;
+}
+.ef-toggle-switch .btn:active,
+.ef-toggle-switch .btn.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.ef-toggle-switch .btn.disabled,
+.ef-toggle-switch .btn[disabled],
+.ef-toggle-switch fieldset[disabled] .btn {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.ef-toggle-switch .btn-default {
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+.ef-toggle-switch .btn-default:hover,
+.ef-toggle-switch .btn-default:focus,
+.ef-toggle-switch .btn-default:active,
+.ef-toggle-switch .btn-default.active,
+.ef-toggle-switch .open .dropdown-toggle.btn-default {
+  color: #333333;
+  background-color: #ebebeb;
+  border-color: #adadad;
+}
+.ef-toggle-switch .btn-default:active,
+.ef-toggle-switch .btn-default.active,
+.ef-toggle-switch .open .dropdown-toggle.btn-default {
+  background-image: none;
+}
+.ef-toggle-switch .btn-default.disabled,
+.ef-toggle-switch .btn-default[disabled],
+.ef-toggle-switch fieldset[disabled] .btn-default,
+.ef-toggle-switch .btn-default.disabled:hover,
+.ef-toggle-switch .btn-default[disabled]:hover,
+.ef-toggle-switch fieldset[disabled] .btn-default:hover,
+.ef-toggle-switch .btn-default.disabled:focus,
+.ef-toggle-switch .btn-default[disabled]:focus,
+.ef-toggle-switch fieldset[disabled] .btn-default:focus,
+.ef-toggle-switch .btn-default.disabled:active,
+.ef-toggle-switch .btn-default[disabled]:active,
+.ef-toggle-switch fieldset[disabled] .btn-default:active,
+.ef-toggle-switch .btn-default.disabled.active,
+.ef-toggle-switch .btn-default[disabled].active,
+.ef-toggle-switch fieldset[disabled] .btn-default.active {
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+.ef-toggle-switch .btn-default .badge {
+  color: #ffffff;
+  background-color: #333333;
+}
+.ef-toggle-switch .btn-primary {
+  color: #ffffff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+.ef-toggle-switch .btn-primary:hover,
+.ef-toggle-switch .btn-primary:focus,
+.ef-toggle-switch .btn-primary:active,
+.ef-toggle-switch .btn-primary.active,
+.ef-toggle-switch .open .dropdown-toggle.btn-primary {
+  color: #ffffff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+.ef-toggle-switch .btn-primary:active,
+.ef-toggle-switch .btn-primary.active,
+.ef-toggle-switch .open .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+.ef-toggle-switch .btn-primary.disabled,
+.ef-toggle-switch .btn-primary[disabled],
+.ef-toggle-switch fieldset[disabled] .btn-primary,
+.ef-toggle-switch .btn-primary.disabled:hover,
+.ef-toggle-switch .btn-primary[disabled]:hover,
+.ef-toggle-switch fieldset[disabled] .btn-primary:hover,
+.ef-toggle-switch .btn-primary.disabled:focus,
+.ef-toggle-switch .btn-primary[disabled]:focus,
+.ef-toggle-switch fieldset[disabled] .btn-primary:focus,
+.ef-toggle-switch .btn-primary.disabled:active,
+.ef-toggle-switch .btn-primary[disabled]:active,
+.ef-toggle-switch fieldset[disabled] .btn-primary:active,
+.ef-toggle-switch .btn-primary.disabled.active,
+.ef-toggle-switch .btn-primary[disabled].active,
+.ef-toggle-switch fieldset[disabled] .btn-primary.active {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+.ef-toggle-switch .btn-primary .badge {
+  color: #428bca;
+  background-color: #ffffff;
+}
+.ef-toggle-switch .btn-success {
+  color: #ffffff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.ef-toggle-switch .btn-success:hover,
+.ef-toggle-switch .btn-success:focus,
+.ef-toggle-switch .btn-success:active,
+.ef-toggle-switch .btn-success.active,
+.ef-toggle-switch .open .dropdown-toggle.btn-success {
+  color: #ffffff;
+  background-color: #47a447;
+  border-color: #398439;
+}
+.ef-toggle-switch .btn-success:active,
+.ef-toggle-switch .btn-success.active,
+.ef-toggle-switch .open .dropdown-toggle.btn-success {
+  background-image: none;
+}
+.ef-toggle-switch .btn-success.disabled,
+.ef-toggle-switch .btn-success[disabled],
+.ef-toggle-switch fieldset[disabled] .btn-success,
+.ef-toggle-switch .btn-success.disabled:hover,
+.ef-toggle-switch .btn-success[disabled]:hover,
+.ef-toggle-switch fieldset[disabled] .btn-success:hover,
+.ef-toggle-switch .btn-success.disabled:focus,
+.ef-toggle-switch .btn-success[disabled]:focus,
+.ef-toggle-switch fieldset[disabled] .btn-success:focus,
+.ef-toggle-switch .btn-success.disabled:active,
+.ef-toggle-switch .btn-success[disabled]:active,
+.ef-toggle-switch fieldset[disabled] .btn-success:active,
+.ef-toggle-switch .btn-success.disabled.active,
+.ef-toggle-switch .btn-success[disabled].active,
+.ef-toggle-switch fieldset[disabled] .btn-success.active {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.ef-toggle-switch .btn-success .badge {
+  color: #5cb85c;
+  background-color: #ffffff;
+}
+.ef-toggle-switch .btn-info {
+  color: #ffffff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+.ef-toggle-switch .btn-info:hover,
+.ef-toggle-switch .btn-info:focus,
+.ef-toggle-switch .btn-info:active,
+.ef-toggle-switch .btn-info.active,
+.ef-toggle-switch .open .dropdown-toggle.btn-info {
+  color: #ffffff;
+  background-color: #39b3d7;
+  border-color: #269abc;
+}
+.ef-toggle-switch .btn-info:active,
+.ef-toggle-switch .btn-info.active,
+.ef-toggle-switch .open .dropdown-toggle.btn-info {
+  background-image: none;
+}
+.ef-toggle-switch .btn-info.disabled,
+.ef-toggle-switch .btn-info[disabled],
+.ef-toggle-switch fieldset[disabled] .btn-info,
+.ef-toggle-switch .btn-info.disabled:hover,
+.ef-toggle-switch .btn-info[disabled]:hover,
+.ef-toggle-switch fieldset[disabled] .btn-info:hover,
+.ef-toggle-switch .btn-info.disabled:focus,
+.ef-toggle-switch .btn-info[disabled]:focus,
+.ef-toggle-switch fieldset[disabled] .btn-info:focus,
+.ef-toggle-switch .btn-info.disabled:active,
+.ef-toggle-switch .btn-info[disabled]:active,
+.ef-toggle-switch fieldset[disabled] .btn-info:active,
+.ef-toggle-switch .btn-info.disabled.active,
+.ef-toggle-switch .btn-info[disabled].active,
+.ef-toggle-switch fieldset[disabled] .btn-info.active {
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+.ef-toggle-switch .btn-info .badge {
+  color: #5bc0de;
+  background-color: #ffffff;
+}
+.ef-toggle-switch .btn-warning {
+  color: #ffffff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+.ef-toggle-switch .btn-warning:hover,
+.ef-toggle-switch .btn-warning:focus,
+.ef-toggle-switch .btn-warning:active,
+.ef-toggle-switch .btn-warning.active,
+.ef-toggle-switch .open .dropdown-toggle.btn-warning {
+  color: #ffffff;
+  background-color: #ed9c28;
+  border-color: #d58512;
+}
+.ef-toggle-switch .btn-warning:active,
+.ef-toggle-switch .btn-warning.active,
+.ef-toggle-switch .open .dropdown-toggle.btn-warning {
+  background-image: none;
+}
+.ef-toggle-switch .btn-warning.disabled,
+.ef-toggle-switch .btn-warning[disabled],
+.ef-toggle-switch fieldset[disabled] .btn-warning,
+.ef-toggle-switch .btn-warning.disabled:hover,
+.ef-toggle-switch .btn-warning[disabled]:hover,
+.ef-toggle-switch fieldset[disabled] .btn-warning:hover,
+.ef-toggle-switch .btn-warning.disabled:focus,
+.ef-toggle-switch .btn-warning[disabled]:focus,
+.ef-toggle-switch fieldset[disabled] .btn-warning:focus,
+.ef-toggle-switch .btn-warning.disabled:active,
+.ef-toggle-switch .btn-warning[disabled]:active,
+.ef-toggle-switch fieldset[disabled] .btn-warning:active,
+.ef-toggle-switch .btn-warning.disabled.active,
+.ef-toggle-switch .btn-warning[disabled].active,
+.ef-toggle-switch fieldset[disabled] .btn-warning.active {
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+.ef-toggle-switch .btn-warning .badge {
+  color: #f0ad4e;
+  background-color: #ffffff;
+}
+.ef-toggle-switch .btn-danger {
+  color: #ffffff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.ef-toggle-switch .btn-danger:hover,
+.ef-toggle-switch .btn-danger:focus,
+.ef-toggle-switch .btn-danger:active,
+.ef-toggle-switch .btn-danger.active,
+.ef-toggle-switch .open .dropdown-toggle.btn-danger {
+  color: #ffffff;
+  background-color: #d2322d;
+  border-color: #ac2925;
+}
+.ef-toggle-switch .btn-danger:active,
+.ef-toggle-switch .btn-danger.active,
+.ef-toggle-switch .open .dropdown-toggle.btn-danger {
+  background-image: none;
+}
+.ef-toggle-switch .btn-danger.disabled,
+.ef-toggle-switch .btn-danger[disabled],
+.ef-toggle-switch fieldset[disabled] .btn-danger,
+.ef-toggle-switch .btn-danger.disabled:hover,
+.ef-toggle-switch .btn-danger[disabled]:hover,
+.ef-toggle-switch fieldset[disabled] .btn-danger:hover,
+.ef-toggle-switch .btn-danger.disabled:focus,
+.ef-toggle-switch .btn-danger[disabled]:focus,
+.ef-toggle-switch fieldset[disabled] .btn-danger:focus,
+.ef-toggle-switch .btn-danger.disabled:active,
+.ef-toggle-switch .btn-danger[disabled]:active,
+.ef-toggle-switch fieldset[disabled] .btn-danger:active,
+.ef-toggle-switch .btn-danger.disabled.active,
+.ef-toggle-switch .btn-danger[disabled].active,
+.ef-toggle-switch fieldset[disabled] .btn-danger.active {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.ef-toggle-switch .btn-danger .badge {
+  color: #d9534f;
+  background-color: #ffffff;
+}
+.ef-toggle-switch .btn-link {
+  color: #428bca;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 0;
+}
+.ef-toggle-switch .btn-link,
+.ef-toggle-switch .btn-link:active,
+.ef-toggle-switch .btn-link[disabled],
+.ef-toggle-switch fieldset[disabled] .btn-link {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.ef-toggle-switch .btn-link,
+.ef-toggle-switch .btn-link:hover,
+.ef-toggle-switch .btn-link:focus,
+.ef-toggle-switch .btn-link:active {
+  border-color: transparent;
+}
+.ef-toggle-switch .btn-link:hover,
+.ef-toggle-switch .btn-link:focus {
+  color: #2a6496;
+  text-decoration: underline;
+  background-color: transparent;
+}
+.ef-toggle-switch .btn-link[disabled]:hover,
+.ef-toggle-switch fieldset[disabled] .btn-link:hover,
+.ef-toggle-switch .btn-link[disabled]:focus,
+.ef-toggle-switch fieldset[disabled] .btn-link:focus {
+  color: #999999;
+  text-decoration: none;
+}
+.ef-toggle-switch .btn-lg,
+.ef-toggle-switch .btn-group-lg > .btn {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+.ef-toggle-switch .btn-sm,
+.ef-toggle-switch .btn-group-sm > .btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.ef-toggle-switch .btn-xs,
+.ef-toggle-switch .btn-group-xs > .btn {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.ef-toggle-switch .btn-block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+.ef-toggle-switch .btn-block + .btn-block {
+  margin-top: 5px;
+}
+.ef-toggle-switch input[type="submit"].btn-block,
+.ef-toggle-switch input[type="reset"].btn-block,
+.ef-toggle-switch input[type="button"].btn-block {
+  width: 100%;
+}
+.ef-toggle-switch .btn-group,
+.ef-toggle-switch .btn-group-vertical {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.ef-toggle-switch .btn-group > .btn,
+.ef-toggle-switch .btn-group-vertical > .btn {
+  position: relative;
+  float: left;
+}
+.ef-toggle-switch .btn-group > .btn:hover,
+.ef-toggle-switch .btn-group-vertical > .btn:hover,
+.ef-toggle-switch .btn-group > .btn:focus,
+.ef-toggle-switch .btn-group-vertical > .btn:focus,
+.ef-toggle-switch .btn-group > .btn:active,
+.ef-toggle-switch .btn-group-vertical > .btn:active,
+.ef-toggle-switch .btn-group > .btn.active,
+.ef-toggle-switch .btn-group-vertical > .btn.active {
+  z-index: 2;
+}
+.ef-toggle-switch .btn-group > .btn:focus,
+.ef-toggle-switch .btn-group-vertical > .btn:focus {
+  outline: none;
+}
+.ef-toggle-switch .btn-group .btn + .btn,
+.ef-toggle-switch .btn-group .btn + .btn-group,
+.ef-toggle-switch .btn-group .btn-group + .btn,
+.ef-toggle-switch .btn-group .btn-group + .btn-group {
+  margin-left: -1px;
+}
+.ef-toggle-switch .btn-toolbar {
+  margin-left: -5px;
+}
+.ef-toggle-switch .btn-toolbar .btn-group,
+.ef-toggle-switch .btn-toolbar .input-group {
+  float: left;
+}
+.ef-toggle-switch .btn-toolbar > .btn,
+.ef-toggle-switch .btn-toolbar > .btn-group,
+.ef-toggle-switch .btn-toolbar > .input-group {
+  margin-left: 5px;
+}
+.ef-toggle-switch .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: 0;
+}
+.ef-toggle-switch .btn-group > .btn:first-child {
+  margin-left: 0;
+}
+.ef-toggle-switch .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.ef-toggle-switch .btn-group > .btn:last-child:not(:first-child),
+.ef-toggle-switch .btn-group > .dropdown-toggle:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.ef-toggle-switch .btn-group > .btn-group {
+  float: left;
+}
+.ef-toggle-switch .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+.ef-toggle-switch .btn-group > .btn-group:first-child > .btn:last-child,
+.ef-toggle-switch .btn-group > .btn-group:first-child > .dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.ef-toggle-switch .btn-group > .btn-group:last-child > .btn:first-child {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.ef-toggle-switch .btn-group .dropdown-toggle:active,
+.ef-toggle-switch .btn-group.open .dropdown-toggle {
+  outline: 0;
+}
+.ef-toggle-switch .btn-group > .btn + .dropdown-toggle {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.ef-toggle-switch .btn-group > .btn-lg + .dropdown-toggle {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.ef-toggle-switch .btn-group.open .dropdown-toggle {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.ef-toggle-switch .btn-group.open .dropdown-toggle.btn-link {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.ef-toggle-switch .btn .caret {
+  margin-left: 0;
+}
+.ef-toggle-switch .btn-lg .caret {
+  border-width: 5px 5px 0;
+  border-bottom-width: 0;
+}
+.ef-toggle-switch .dropup .btn-lg .caret {
+  border-width: 0 5px 5px;
+}
+.ef-toggle-switch .btn-group-vertical > .btn,
+.ef-toggle-switch .btn-group-vertical > .btn-group,
+.ef-toggle-switch .btn-group-vertical > .btn-group > .btn {
+  display: block;
+  float: none;
+  width: 100%;
+  max-width: 100%;
+}
+.ef-toggle-switch .btn-group-vertical > .btn-group > .btn {
+  float: none;
+}
+.ef-toggle-switch .btn-group-vertical > .btn + .btn,
+.ef-toggle-switch .btn-group-vertical > .btn + .btn-group,
+.ef-toggle-switch .btn-group-vertical > .btn-group + .btn,
+.ef-toggle-switch .btn-group-vertical > .btn-group + .btn-group {
+  margin-top: -1px;
+  margin-left: 0;
+}
+.ef-toggle-switch .btn-group-vertical > .btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.ef-toggle-switch .btn-group-vertical > .btn:first-child:not(:last-child) {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.ef-toggle-switch .btn-group-vertical > .btn:last-child:not(:first-child) {
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.ef-toggle-switch .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+.ef-toggle-switch .btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.ef-toggle-switch .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.ef-toggle-switch .btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.ef-toggle-switch .btn-group-justified {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+}
+.ef-toggle-switch .btn-group-justified > .btn,
+.ef-toggle-switch .btn-group-justified > .btn-group {
+  float: none;
+  display: table-cell;
+  width: 1%;
+}
+.ef-toggle-switch .btn-group-justified > .btn-group .btn {
+  width: 100%;
+}
+.ef-toggle-switch [data-toggle="buttons"] > .btn > input[type="radio"],
+.ef-toggle-switch [data-toggle="buttons"] > .btn > input[type="checkbox"] {
+  display: none;
+}
+.ef-toggle-switch .clearfix:before,
+.ef-toggle-switch .clearfix:after,
+.ef-toggle-switch .btn-toolbar:before,
+.ef-toggle-switch .btn-toolbar:after,
+.ef-toggle-switch .btn-group-vertical > .btn-group:before,
+.ef-toggle-switch .btn-group-vertical > .btn-group:after {
+  content: " ";
+  display: table;
+}
+.ef-toggle-switch .clearfix:after,
+.ef-toggle-switch .btn-toolbar:after,
+.ef-toggle-switch .btn-group-vertical > .btn-group:after {
+  clear: both;
+}
+.ef-toggle-switch .center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ef-toggle-switch .pull-right {
+  float: right !important;
+}
+.ef-toggle-switch .pull-left {
+  float: left !important;
+}
+.ef-toggle-switch .hide {
+  display: none !important;
+}
+.ef-toggle-switch .show {
+  display: block !important;
+}
+.ef-toggle-switch .invisible {
+  visibility: hidden;
+}
+.ef-toggle-switch .text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.ef-toggle-switch .hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+.ef-toggle-switch .affix {
+  position: fixed;
+}
+@-ms-viewport {
+  width: device-width;
+}
+.ef-toggle-switch .visible-xs,
+.ef-toggle-switch .visible-sm,
+.ef-toggle-switch .visible-md,
+.ef-toggle-switch .visible-lg {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  .ef-toggle-switch .visible-xs {
+    display: block !important;
+  }
+  .ef-toggle-switch table.visible-xs {
+    display: table;
+  }
+  .ef-toggle-switch tr.visible-xs {
+    display: table-row !important;
+  }
+  .ef-toggle-switch th.visible-xs,
+  .ef-toggle-switch td.visible-xs {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .ef-toggle-switch .visible-sm {
+    display: block !important;
+  }
+  .ef-toggle-switch table.visible-sm {
+    display: table;
+  }
+  .ef-toggle-switch tr.visible-sm {
+    display: table-row !important;
+  }
+  .ef-toggle-switch th.visible-sm,
+  .ef-toggle-switch td.visible-sm {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .ef-toggle-switch .visible-md {
+    display: block !important;
+  }
+  .ef-toggle-switch table.visible-md {
+    display: table;
+  }
+  .ef-toggle-switch tr.visible-md {
+    display: table-row !important;
+  }
+  .ef-toggle-switch th.visible-md,
+  .ef-toggle-switch td.visible-md {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 1200px) {
+  .ef-toggle-switch .visible-lg {
+    display: block !important;
+  }
+  .ef-toggle-switch table.visible-lg {
+    display: table;
+  }
+  .ef-toggle-switch tr.visible-lg {
+    display: table-row !important;
+  }
+  .ef-toggle-switch th.visible-lg,
+  .ef-toggle-switch td.visible-lg {
+    display: table-cell !important;
+  }
+}
+@media (max-width: 767px) {
+  .ef-toggle-switch .hidden-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .ef-toggle-switch .hidden-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .ef-toggle-switch .hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .ef-toggle-switch .hidden-lg {
+    display: none !important;
+  }
+}
+.ef-toggle-switch .visible-print {
+  display: none !important;
+}
+@media print {
+  .ef-toggle-switch .visible-print {
+    display: block !important;
+  }
+  .ef-toggle-switch table.visible-print {
+    display: table;
+  }
+  .ef-toggle-switch tr.visible-print {
+    display: table-row !important;
+  }
+  .ef-toggle-switch th.visible-print,
+  .ef-toggle-switch td.visible-print {
+    display: table-cell !important;
+  }
+}
+@media print {
+  .ef-toggle-switch .hidden-print {
+    display: none !important;
+  }
+}
+.ef-toggle-group-buttons{
+  width: 100%;
+  clear: both;
+}

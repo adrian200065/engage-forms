@@ -1,0 +1,6 @@
+Plugin Name -- Engage Forms Pro
+Text domain -- engage-forms
+Function prefix -- ef_pro
+Class prefix -- n/a
+Root namespace -- engagewp\engageforms\pro\
+Hook Prefix -- engage_forms_pro

@@ -1,0 +1,57 @@
+{
+    "name": "engagewp/engage-forms-query",
+    "description": "Engage Forms Query Library",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Josh Pollock",
+            "email": "Adrian@engagewp.com"
+        }
+    ],
+    "repositories" : [
+        {
+            "type": "git",
+            "url" : "https://github.com/EngageWP/Engage-Forms"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "nilportugues/sql-query-builder": "^1.5",
+        "engagewp/engage-containers": "^0.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "engagewp\\EngageFormsQuery\\": "src"
+        },
+        "files": ["src/EngageFormsQueries.php"]
+    },
+    "scripts" : {
+        "tests" : "composer unit-tests && composer wp-tests",
+        "unit-tests": "phpunit --testsuite=unit",
+        "wp-install": "bash ./bin/install-docker.sh",
+        "wp-tests": "docker-compose run --rm wordpress_phpunit phpunit --configuration phpunit-integration.xml.dist",
+        "phpunit-v": "phpunit --version",
+        "sniffs" : "phpcs src/ && phpcs Tests/",
+        "fixes" : "phpcbf src/ && phpcbf Tests/",
+        "lints" : "parallel-lint ./src  --blame --exclude vendor && parallel-lint ./tests  --blame --exclude vendor"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "engagewp\\EngageFormsQuery\\Tests\\": "Tests/"
+
+        }
+    },
+    "require-dev": {
+        "php": "^7.1",
+        "phpunit/phpunit": "^7.0",
+        "squizlabs/php_codesniffer": "^3.2",
+        "jakub-onderka/php-parallel-lint": "^1.0",
+        "Desertsnowman/engage-forms": "dev-feature/2404",
+        "composer/installers": "~1.0"
+    },
+    "extra" : {
+        "installer-paths" : {
+            "Tests/plugins/{$name}/" : ["type:wordpress-plugin"]
+        }
+    }
+}

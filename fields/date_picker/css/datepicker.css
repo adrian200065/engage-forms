@@ -1,0 +1,791 @@
+/*!
+ * Datepicker for Bootstrap
+ *
+ * Copyright 2012 Stefan Petre
+ * Improvements by Andrew Rowls
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+.efdatepicker {
+  padding: 4px;
+  border-radius: 4px;
+  direction: ltr;
+  /*.dow {
+    border-top: 1px solid #ddd !important;
+  }*/
+}
+.efdatepicker-inline {
+  width: 220px;
+}
+.efdatepicker.efdatepicker-rtl {
+  direction: rtl;
+}
+.efdatepicker.efdatepicker-rtl table tr td span {
+  float: right;
+}
+.efdatepicker-dropdown {
+  top: 0;
+  left: 0;
+}
+.efdatepicker-dropdown:before {
+  content: '';
+  display: inline-block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-top: 0;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+}
+.efdatepicker-dropdown:after {
+  content: '';
+  display: inline-block;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #fff;
+  border-top: 0;
+  position: absolute;
+}
+.efdatepicker-dropdown.efdatepicker-orient-left:before {
+  left: 6px;
+}
+.efdatepicker-dropdown.efdatepicker-orient-left:after {
+  left: 7px;
+}
+.efdatepicker-dropdown.efdatepicker-orient-right:before {
+  right: 6px;
+}
+.efdatepicker-dropdown.efdatepicker-orient-right:after {
+  right: 7px;
+}
+.efdatepicker-dropdown.efdatepicker-orient-top:before {
+  top: -7px;
+}
+.efdatepicker-dropdown.efdatepicker-orient-top:after {
+  top: -6px;
+}
+.efdatepicker-dropdown.efdatepicker-orient-bottom:before {
+  bottom: -7px;
+  border-bottom: 0;
+  border-top: 7px solid #999;
+}
+.efdatepicker-dropdown.efdatepicker-orient-bottom:after {
+  bottom: -6px;
+  border-bottom: 0;
+  border-top: 6px solid #fff;
+}
+.efdatepicker > div {
+  display: none;
+}
+.efdatepicker.days div.efdatepicker-days {
+  display: block;
+}
+.efdatepicker.months div.efdatepicker-months {
+  display: block;
+}
+.efdatepicker.years div.efdatepicker-years {
+  display: block;
+}
+.efdatepicker table {
+  border: 0 none;
+  width: auto;
+  margin: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.efdatepicker table tr td,
+.efdatepicker table tr th {
+  text-align: center;
+  height: 10px;
+  border-radius: 4px;
+  border: none;
+}
+.table-striped .efdatepicker table tr td,
+.table-striped .efdatepicker table tr th {
+  background-color: transparent;
+}
+.efdatepicker table tr td.day:hover,
+.efdatepicker table tr td.day.focused {
+  background: #eeeeee;
+  cursor: pointer;
+}
+.efdatepicker table tr td.old,
+.efdatepicker table tr td.new {
+  color: #999999;
+}
+.efdatepicker table tr td.disabled,
+.efdatepicker table tr td.disabled:hover {
+  background: none;
+  color: #999999;
+  cursor: default;
+}
+.efdatepicker table tr td.today,
+.efdatepicker table tr td.today:hover,
+.efdatepicker table tr td.today.disabled,
+.efdatepicker table tr td.today.disabled:hover {
+  color: #000000;
+  background-color: #ffdb99;
+  border-color: #ffb733;
+}
+.efdatepicker table tr td.today:hover,
+.efdatepicker table tr td.today:hover:hover,
+.efdatepicker table tr td.today.disabled:hover,
+.efdatepicker table tr td.today.disabled:hover:hover,
+.efdatepicker table tr td.today:focus,
+.efdatepicker table tr td.today:hover:focus,
+.efdatepicker table tr td.today.disabled:focus,
+.efdatepicker table tr td.today.disabled:hover:focus,
+.efdatepicker table tr td.today:active,
+.efdatepicker table tr td.today:hover:active,
+.efdatepicker table tr td.today.disabled:active,
+.efdatepicker table tr td.today.disabled:hover:active,
+.efdatepicker table tr td.today.active,
+.efdatepicker table tr td.today:hover.active,
+.efdatepicker table tr td.today.disabled.active,
+.efdatepicker table tr td.today.disabled:hover.active,
+.open .dropdown-toggle.efdatepicker table tr td.today,
+.open .dropdown-toggle.efdatepicker table tr td.today:hover,
+.open .dropdown-toggle.efdatepicker table tr td.today.disabled,
+.open .dropdown-toggle.efdatepicker table tr td.today.disabled:hover {
+  color: #000000;
+  background-color: #ffcd70;
+  border-color: #f59e00;
+}
+.efdatepicker table tr td.today:active,
+.efdatepicker table tr td.today:hover:active,
+.efdatepicker table tr td.today.disabled:active,
+.efdatepicker table tr td.today.disabled:hover:active,
+.efdatepicker table tr td.today.active,
+.efdatepicker table tr td.today:hover.active,
+.efdatepicker table tr td.today.disabled.active,
+.efdatepicker table tr td.today.disabled:hover.active,
+.open .dropdown-toggle.efdatepicker table tr td.today,
+.open .dropdown-toggle.efdatepicker table tr td.today:hover,
+.open .dropdown-toggle.efdatepicker table tr td.today.disabled,
+.open .dropdown-toggle.efdatepicker table tr td.today.disabled:hover {
+  background-image: none;
+}
+.efdatepicker table tr td.today.disabled,
+.efdatepicker table tr td.today:hover.disabled,
+.efdatepicker table tr td.today.disabled.disabled,
+.efdatepicker table tr td.today.disabled:hover.disabled,
+.efdatepicker table tr td.today[disabled],
+.efdatepicker table tr td.today:hover[disabled],
+.efdatepicker table tr td.today.disabled[disabled],
+.efdatepicker table tr td.today.disabled:hover[disabled],
+fieldset[disabled] .efdatepicker table tr td.today,
+fieldset[disabled] .efdatepicker table tr td.today:hover,
+fieldset[disabled] .efdatepicker table tr td.today.disabled,
+fieldset[disabled] .efdatepicker table tr td.today.disabled:hover,
+.efdatepicker table tr td.today.disabled:hover,
+.efdatepicker table tr td.today:hover.disabled:hover,
+.efdatepicker table tr td.today.disabled.disabled:hover,
+.efdatepicker table tr td.today.disabled:hover.disabled:hover,
+.efdatepicker table tr td.today[disabled]:hover,
+.efdatepicker table tr td.today:hover[disabled]:hover,
+.efdatepicker table tr td.today.disabled[disabled]:hover,
+.efdatepicker table tr td.today.disabled:hover[disabled]:hover,
+fieldset[disabled] .efdatepicker table tr td.today:hover,
+fieldset[disabled] .efdatepicker table tr td.today:hover:hover,
+fieldset[disabled] .efdatepicker table tr td.today.disabled:hover,
+fieldset[disabled] .efdatepicker table tr td.today.disabled:hover:hover,
+.efdatepicker table tr td.today.disabled:focus,
+.efdatepicker table tr td.today:hover.disabled:focus,
+.efdatepicker table tr td.today.disabled.disabled:focus,
+.efdatepicker table tr td.today.disabled:hover.disabled:focus,
+.efdatepicker table tr td.today[disabled]:focus,
+.efdatepicker table tr td.today:hover[disabled]:focus,
+.efdatepicker table tr td.today.disabled[disabled]:focus,
+.efdatepicker table tr td.today.disabled:hover[disabled]:focus,
+fieldset[disabled] .efdatepicker table tr td.today:focus,
+fieldset[disabled] .efdatepicker table tr td.today:hover:focus,
+fieldset[disabled] .efdatepicker table tr td.today.disabled:focus,
+fieldset[disabled] .efdatepicker table tr td.today.disabled:hover:focus,
+.efdatepicker table tr td.today.disabled:active,
+.efdatepicker table tr td.today:hover.disabled:active,
+.efdatepicker table tr td.today.disabled.disabled:active,
+.efdatepicker table tr td.today.disabled:hover.disabled:active,
+.efdatepicker table tr td.today[disabled]:active,
+.efdatepicker table tr td.today:hover[disabled]:active,
+.efdatepicker table tr td.today.disabled[disabled]:active,
+.efdatepicker table tr td.today.disabled:hover[disabled]:active,
+fieldset[disabled] .efdatepicker table tr td.today:active,
+fieldset[disabled] .efdatepicker table tr td.today:hover:active,
+fieldset[disabled] .efdatepicker table tr td.today.disabled:active,
+fieldset[disabled] .efdatepicker table tr td.today.disabled:hover:active,
+.efdatepicker table tr td.today.disabled.active,
+.efdatepicker table tr td.today:hover.disabled.active,
+.efdatepicker table tr td.today.disabled.disabled.active,
+.efdatepicker table tr td.today.disabled:hover.disabled.active,
+.efdatepicker table tr td.today[disabled].active,
+.efdatepicker table tr td.today:hover[disabled].active,
+.efdatepicker table tr td.today.disabled[disabled].active,
+.efdatepicker table tr td.today.disabled:hover[disabled].active,
+fieldset[disabled] .efdatepicker table tr td.today.active,
+fieldset[disabled] .efdatepicker table tr td.today:hover.active,
+fieldset[disabled] .efdatepicker table tr td.today.disabled.active,
+fieldset[disabled] .efdatepicker table tr td.today.disabled:hover.active {
+  background-color: #ffdb99;
+  border-color: #ffb733;
+}
+.efdatepicker table tr td.today:hover:hover {
+  color: #000;
+}
+.efdatepicker table tr td.today.active:hover {
+  color: #fff;
+}
+.efdatepicker table tr td.range,
+.efdatepicker table tr td.range:hover,
+.efdatepicker table tr td.range.disabled,
+.efdatepicker table tr td.range.disabled:hover {
+  background: #eeeeee;
+  border-radius: 0;
+}
+.efdatepicker table tr td.range.today,
+.efdatepicker table tr td.range.today:hover,
+.efdatepicker table tr td.range.today.disabled,
+.efdatepicker table tr td.range.today.disabled:hover {
+  color: #000000;
+  background-color: #f7ca77;
+  border-color: #f1a417;
+  border-radius: 0;
+}
+.efdatepicker table tr td.range.today:hover,
+.efdatepicker table tr td.range.today:hover:hover,
+.efdatepicker table tr td.range.today.disabled:hover,
+.efdatepicker table tr td.range.today.disabled:hover:hover,
+.efdatepicker table tr td.range.today:focus,
+.efdatepicker table tr td.range.today:hover:focus,
+.efdatepicker table tr td.range.today.disabled:focus,
+.efdatepicker table tr td.range.today.disabled:hover:focus,
+.efdatepicker table tr td.range.today:active,
+.efdatepicker table tr td.range.today:hover:active,
+.efdatepicker table tr td.range.today.disabled:active,
+.efdatepicker table tr td.range.today.disabled:hover:active,
+.efdatepicker table tr td.range.today.active,
+.efdatepicker table tr td.range.today:hover.active,
+.efdatepicker table tr td.range.today.disabled.active,
+.efdatepicker table tr td.range.today.disabled:hover.active,
+.open .dropdown-toggle.efdatepicker table tr td.range.today,
+.open .dropdown-toggle.efdatepicker table tr td.range.today:hover,
+.open .dropdown-toggle.efdatepicker table tr td.range.today.disabled,
+.open .dropdown-toggle.efdatepicker table tr td.range.today.disabled:hover {
+  color: #000000;
+  background-color: #f4bb51;
+  border-color: #bf800c;
+}
+.efdatepicker table tr td.range.today:active,
+.efdatepicker table tr td.range.today:hover:active,
+.efdatepicker table tr td.range.today.disabled:active,
+.efdatepicker table tr td.range.today.disabled:hover:active,
+.efdatepicker table tr td.range.today.active,
+.efdatepicker table tr td.range.today:hover.active,
+.efdatepicker table tr td.range.today.disabled.active,
+.efdatepicker table tr td.range.today.disabled:hover.active,
+.open .dropdown-toggle.efdatepicker table tr td.range.today,
+.open .dropdown-toggle.efdatepicker table tr td.range.today:hover,
+.open .dropdown-toggle.efdatepicker table tr td.range.today.disabled,
+.open .dropdown-toggle.efdatepicker table tr td.range.today.disabled:hover {
+  background-image: none;
+}
+.efdatepicker table tr td.range.today.disabled,
+.efdatepicker table tr td.range.today:hover.disabled,
+.efdatepicker table tr td.range.today.disabled.disabled,
+.efdatepicker table tr td.range.today.disabled:hover.disabled,
+.efdatepicker table tr td.range.today[disabled],
+.efdatepicker table tr td.range.today:hover[disabled],
+.efdatepicker table tr td.range.today.disabled[disabled],
+.efdatepicker table tr td.range.today.disabled:hover[disabled],
+fieldset[disabled] .efdatepicker table tr td.range.today,
+fieldset[disabled] .efdatepicker table tr td.range.today:hover,
+fieldset[disabled] .efdatepicker table tr td.range.today.disabled,
+fieldset[disabled] .efdatepicker table tr td.range.today.disabled:hover,
+.efdatepicker table tr td.range.today.disabled:hover,
+.efdatepicker table tr td.range.today:hover.disabled:hover,
+.efdatepicker table tr td.range.today.disabled.disabled:hover,
+.efdatepicker table tr td.range.today.disabled:hover.disabled:hover,
+.efdatepicker table tr td.range.today[disabled]:hover,
+.efdatepicker table tr td.range.today:hover[disabled]:hover,
+.efdatepicker table tr td.range.today.disabled[disabled]:hover,
+.efdatepicker table tr td.range.today.disabled:hover[disabled]:hover,
+fieldset[disabled] .efdatepicker table tr td.range.today:hover,
+fieldset[disabled] .efdatepicker table tr td.range.today:hover:hover,
+fieldset[disabled] .efdatepicker table tr td.range.today.disabled:hover,
+fieldset[disabled] .efdatepicker table tr td.range.today.disabled:hover:hover,
+.efdatepicker table tr td.range.today.disabled:focus,
+.efdatepicker table tr td.range.today:hover.disabled:focus,
+.efdatepicker table tr td.range.today.disabled.disabled:focus,
+.efdatepicker table tr td.range.today.disabled:hover.disabled:focus,
+.efdatepicker table tr td.range.today[disabled]:focus,
+.efdatepicker table tr td.range.today:hover[disabled]:focus,
+.efdatepicker table tr td.range.today.disabled[disabled]:focus,
+.efdatepicker table tr td.range.today.disabled:hover[disabled]:focus,
+fieldset[disabled] .efdatepicker table tr td.range.today:focus,
+fieldset[disabled] .efdatepicker table tr td.range.today:hover:focus,
+fieldset[disabled] .efdatepicker table tr td.range.today.disabled:focus,
+fieldset[disabled] .efdatepicker table tr td.range.today.disabled:hover:focus,
+.efdatepicker table tr td.range.today.disabled:active,
+.efdatepicker table tr td.range.today:hover.disabled:active,
+.efdatepicker table tr td.range.today.disabled.disabled:active,
+.efdatepicker table tr td.range.today.disabled:hover.disabled:active,
+.efdatepicker table tr td.range.today[disabled]:active,
+.efdatepicker table tr td.range.today:hover[disabled]:active,
+.efdatepicker table tr td.range.today.disabled[disabled]:active,
+.efdatepicker table tr td.range.today.disabled:hover[disabled]:active,
+fieldset[disabled] .efdatepicker table tr td.range.today:active,
+fieldset[disabled] .efdatepicker table tr td.range.today:hover:active,
+fieldset[disabled] .efdatepicker table tr td.range.today.disabled:active,
+fieldset[disabled] .efdatepicker table tr td.range.today.disabled:hover:active,
+.efdatepicker table tr td.range.today.disabled.active,
+.efdatepicker table tr td.range.today:hover.disabled.active,
+.efdatepicker table tr td.range.today.disabled.disabled.active,
+.efdatepicker table tr td.range.today.disabled:hover.disabled.active,
+.efdatepicker table tr td.range.today[disabled].active,
+.efdatepicker table tr td.range.today:hover[disabled].active,
+.efdatepicker table tr td.range.today.disabled[disabled].active,
+.efdatepicker table tr td.range.today.disabled:hover[disabled].active,
+fieldset[disabled] .efdatepicker table tr td.range.today.active,
+fieldset[disabled] .efdatepicker table tr td.range.today:hover.active,
+fieldset[disabled] .efdatepicker table tr td.range.today.disabled.active,
+fieldset[disabled] .efdatepicker table tr td.range.today.disabled:hover.active {
+  background-color: #f7ca77;
+  border-color: #f1a417;
+}
+.efdatepicker table tr td.selected,
+.efdatepicker table tr td.selected:hover,
+.efdatepicker table tr td.selected.disabled,
+.efdatepicker table tr td.selected.disabled:hover {
+  color: #ffffff;
+  background-color: #999999;
+  border-color: #555555;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.efdatepicker table tr td.selected:hover,
+.efdatepicker table tr td.selected:hover:hover,
+.efdatepicker table tr td.selected.disabled:hover,
+.efdatepicker table tr td.selected.disabled:hover:hover,
+.efdatepicker table tr td.selected:focus,
+.efdatepicker table tr td.selected:hover:focus,
+.efdatepicker table tr td.selected.disabled:focus,
+.efdatepicker table tr td.selected.disabled:hover:focus,
+.efdatepicker table tr td.selected:active,
+.efdatepicker table tr td.selected:hover:active,
+.efdatepicker table tr td.selected.disabled:active,
+.efdatepicker table tr td.selected.disabled:hover:active,
+.efdatepicker table tr td.selected.active,
+.efdatepicker table tr td.selected:hover.active,
+.efdatepicker table tr td.selected.disabled.active,
+.efdatepicker table tr td.selected.disabled:hover.active,
+.open .dropdown-toggle.efdatepicker table tr td.selected,
+.open .dropdown-toggle.efdatepicker table tr td.selected:hover,
+.open .dropdown-toggle.efdatepicker table tr td.selected.disabled,
+.open .dropdown-toggle.efdatepicker table tr td.selected.disabled:hover {
+  color: #ffffff;
+  background-color: #858585;
+  border-color: #373737;
+}
+.efdatepicker table tr td.selected:active,
+.efdatepicker table tr td.selected:hover:active,
+.efdatepicker table tr td.selected.disabled:active,
+.efdatepicker table tr td.selected.disabled:hover:active,
+.efdatepicker table tr td.selected.active,
+.efdatepicker table tr td.selected:hover.active,
+.efdatepicker table tr td.selected.disabled.active,
+.efdatepicker table tr td.selected.disabled:hover.active,
+.open .dropdown-toggle.efdatepicker table tr td.selected,
+.open .dropdown-toggle.efdatepicker table tr td.selected:hover,
+.open .dropdown-toggle.efdatepicker table tr td.selected.disabled,
+.open .dropdown-toggle.efdatepicker table tr td.selected.disabled:hover {
+  background-image: none;
+}
+.efdatepicker table tr td.selected.disabled,
+.efdatepicker table tr td.selected:hover.disabled,
+.efdatepicker table tr td.selected.disabled.disabled,
+.efdatepicker table tr td.selected.disabled:hover.disabled,
+.efdatepicker table tr td.selected[disabled],
+.efdatepicker table tr td.selected:hover[disabled],
+.efdatepicker table tr td.selected.disabled[disabled],
+.efdatepicker table tr td.selected.disabled:hover[disabled],
+fieldset[disabled] .efdatepicker table tr td.selected,
+fieldset[disabled] .efdatepicker table tr td.selected:hover,
+fieldset[disabled] .efdatepicker table tr td.selected.disabled,
+fieldset[disabled] .efdatepicker table tr td.selected.disabled:hover,
+.efdatepicker table tr td.selected.disabled:hover,
+.efdatepicker table tr td.selected:hover.disabled:hover,
+.efdatepicker table tr td.selected.disabled.disabled:hover,
+.efdatepicker table tr td.selected.disabled:hover.disabled:hover,
+.efdatepicker table tr td.selected[disabled]:hover,
+.efdatepicker table tr td.selected:hover[disabled]:hover,
+.efdatepicker table tr td.selected.disabled[disabled]:hover,
+.efdatepicker table tr td.selected.disabled:hover[disabled]:hover,
+fieldset[disabled] .efdatepicker table tr td.selected:hover,
+fieldset[disabled] .efdatepicker table tr td.selected:hover:hover,
+fieldset[disabled] .efdatepicker table tr td.selected.disabled:hover,
+fieldset[disabled] .efdatepicker table tr td.selected.disabled:hover:hover,
+.efdatepicker table tr td.selected.disabled:focus,
+.efdatepicker table tr td.selected:hover.disabled:focus,
+.efdatepicker table tr td.selected.disabled.disabled:focus,
+.efdatepicker table tr td.selected.disabled:hover.disabled:focus,
+.efdatepicker table tr td.selected[disabled]:focus,
+.efdatepicker table tr td.selected:hover[disabled]:focus,
+.efdatepicker table tr td.selected.disabled[disabled]:focus,
+.efdatepicker table tr td.selected.disabled:hover[disabled]:focus,
+fieldset[disabled] .efdatepicker table tr td.selected:focus,
+fieldset[disabled] .efdatepicker table tr td.selected:hover:focus,
+fieldset[disabled] .efdatepicker table tr td.selected.disabled:focus,
+fieldset[disabled] .efdatepicker table tr td.selected.disabled:hover:focus,
+.efdatepicker table tr td.selected.disabled:active,
+.efdatepicker table tr td.selected:hover.disabled:active,
+.efdatepicker table tr td.selected.disabled.disabled:active,
+.efdatepicker table tr td.selected.disabled:hover.disabled:active,
+.efdatepicker table tr td.selected[disabled]:active,
+.efdatepicker table tr td.selected:hover[disabled]:active,
+.efdatepicker table tr td.selected.disabled[disabled]:active,
+.efdatepicker table tr td.selected.disabled:hover[disabled]:active,
+fieldset[disabled] .efdatepicker table tr td.selected:active,
+fieldset[disabled] .efdatepicker table tr td.selected:hover:active,
+fieldset[disabled] .efdatepicker table tr td.selected.disabled:active,
+fieldset[disabled] .efdatepicker table tr td.selected.disabled:hover:active,
+.efdatepicker table tr td.selected.disabled.active,
+.efdatepicker table tr td.selected:hover.disabled.active,
+.efdatepicker table tr td.selected.disabled.disabled.active,
+.efdatepicker table tr td.selected.disabled:hover.disabled.active,
+.efdatepicker table tr td.selected[disabled].active,
+.efdatepicker table tr td.selected:hover[disabled].active,
+.efdatepicker table tr td.selected.disabled[disabled].active,
+.efdatepicker table tr td.selected.disabled:hover[disabled].active,
+fieldset[disabled] .efdatepicker table tr td.selected.active,
+fieldset[disabled] .efdatepicker table tr td.selected:hover.active,
+fieldset[disabled] .efdatepicker table tr td.selected.disabled.active,
+fieldset[disabled] .efdatepicker table tr td.selected.disabled:hover.active {
+  background-color: #999999;
+  border-color: #555555;
+}
+.efdatepicker table tr td.active,
+.efdatepicker table tr td.active:hover,
+.efdatepicker table tr td.active.disabled,
+.efdatepicker table tr td.active.disabled:hover {
+  color: #ffffff;
+  background-color: #428bca;
+  border-color: #357ebd;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.efdatepicker table tr td.active:hover,
+.efdatepicker table tr td.active:hover:hover,
+.efdatepicker table tr td.active.disabled:hover,
+.efdatepicker table tr td.active.disabled:hover:hover,
+.efdatepicker table tr td.active:focus,
+.efdatepicker table tr td.active:hover:focus,
+.efdatepicker table tr td.active.disabled:focus,
+.efdatepicker table tr td.active.disabled:hover:focus,
+.efdatepicker table tr td.active:active,
+.efdatepicker table tr td.active:hover:active,
+.efdatepicker table tr td.active.disabled:active,
+.efdatepicker table tr td.active.disabled:hover:active,
+.efdatepicker table tr td.active.active,
+.efdatepicker table tr td.active:hover.active,
+.efdatepicker table tr td.active.disabled.active,
+.efdatepicker table tr td.active.disabled:hover.active,
+.open .dropdown-toggle.efdatepicker table tr td.active,
+.open .dropdown-toggle.efdatepicker table tr td.active:hover,
+.open .dropdown-toggle.efdatepicker table tr td.active.disabled,
+.open .dropdown-toggle.efdatepicker table tr td.active.disabled:hover {
+  color: #ffffff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+.efdatepicker table tr td.active:active,
+.efdatepicker table tr td.active:hover:active,
+.efdatepicker table tr td.active.disabled:active,
+.efdatepicker table tr td.active.disabled:hover:active,
+.efdatepicker table tr td.active.active,
+.efdatepicker table tr td.active:hover.active,
+.efdatepicker table tr td.active.disabled.active,
+.efdatepicker table tr td.active.disabled:hover.active,
+.open .dropdown-toggle.efdatepicker table tr td.active,
+.open .dropdown-toggle.efdatepicker table tr td.active:hover,
+.open .dropdown-toggle.efdatepicker table tr td.active.disabled,
+.open .dropdown-toggle.efdatepicker table tr td.active.disabled:hover {
+  background-image: none;
+}
+.efdatepicker table tr td.active.disabled,
+.efdatepicker table tr td.active:hover.disabled,
+.efdatepicker table tr td.active.disabled.disabled,
+.efdatepicker table tr td.active.disabled:hover.disabled,
+.efdatepicker table tr td.active[disabled],
+.efdatepicker table tr td.active:hover[disabled],
+.efdatepicker table tr td.active.disabled[disabled],
+.efdatepicker table tr td.active.disabled:hover[disabled],
+fieldset[disabled] .efdatepicker table tr td.active,
+fieldset[disabled] .efdatepicker table tr td.active:hover,
+fieldset[disabled] .efdatepicker table tr td.active.disabled,
+fieldset[disabled] .efdatepicker table tr td.active.disabled:hover,
+.efdatepicker table tr td.active.disabled:hover,
+.efdatepicker table tr td.active:hover.disabled:hover,
+.efdatepicker table tr td.active.disabled.disabled:hover,
+.efdatepicker table tr td.active.disabled:hover.disabled:hover,
+.efdatepicker table tr td.active[disabled]:hover,
+.efdatepicker table tr td.active:hover[disabled]:hover,
+.efdatepicker table tr td.active.disabled[disabled]:hover,
+.efdatepicker table tr td.active.disabled:hover[disabled]:hover,
+fieldset[disabled] .efdatepicker table tr td.active:hover,
+fieldset[disabled] .efdatepicker table tr td.active:hover:hover,
+fieldset[disabled] .efdatepicker table tr td.active.disabled:hover,
+fieldset[disabled] .efdatepicker table tr td.active.disabled:hover:hover,
+.efdatepicker table tr td.active.disabled:focus,
+.efdatepicker table tr td.active:hover.disabled:focus,
+.efdatepicker table tr td.active.disabled.disabled:focus,
+.efdatepicker table tr td.active.disabled:hover.disabled:focus,
+.efdatepicker table tr td.active[disabled]:focus,
+.efdatepicker table tr td.active:hover[disabled]:focus,
+.efdatepicker table tr td.active.disabled[disabled]:focus,
+.efdatepicker table tr td.active.disabled:hover[disabled]:focus,
+fieldset[disabled] .efdatepicker table tr td.active:focus,
+fieldset[disabled] .efdatepicker table tr td.active:hover:focus,
+fieldset[disabled] .efdatepicker table tr td.active.disabled:focus,
+fieldset[disabled] .efdatepicker table tr td.active.disabled:hover:focus,
+.efdatepicker table tr td.active.disabled:active,
+.efdatepicker table tr td.active:hover.disabled:active,
+.efdatepicker table tr td.active.disabled.disabled:active,
+.efdatepicker table tr td.active.disabled:hover.disabled:active,
+.efdatepicker table tr td.active[disabled]:active,
+.efdatepicker table tr td.active:hover[disabled]:active,
+.efdatepicker table tr td.active.disabled[disabled]:active,
+.efdatepicker table tr td.active.disabled:hover[disabled]:active,
+fieldset[disabled] .efdatepicker table tr td.active:active,
+fieldset[disabled] .efdatepicker table tr td.active:hover:active,
+fieldset[disabled] .efdatepicker table tr td.active.disabled:active,
+fieldset[disabled] .efdatepicker table tr td.active.disabled:hover:active,
+.efdatepicker table tr td.active.disabled.active,
+.efdatepicker table tr td.active:hover.disabled.active,
+.efdatepicker table tr td.active.disabled.disabled.active,
+.efdatepicker table tr td.active.disabled:hover.disabled.active,
+.efdatepicker table tr td.active[disabled].active,
+.efdatepicker table tr td.active:hover[disabled].active,
+.efdatepicker table tr td.active.disabled[disabled].active,
+.efdatepicker table tr td.active.disabled:hover[disabled].active,
+fieldset[disabled] .efdatepicker table tr td.active.active,
+fieldset[disabled] .efdatepicker table tr td.active:hover.active,
+fieldset[disabled] .efdatepicker table tr td.active.disabled.active,
+fieldset[disabled] .efdatepicker table tr td.active.disabled:hover.active {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+.efdatepicker table tr td span {
+  display: block;
+  width: 23%;
+  height: 54px;
+  line-height: 54px;
+  float: left;
+  margin: 1%;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.efdatepicker table tr td span:hover {
+  background: #eeeeee;
+}
+.efdatepicker table tr td span.disabled,
+.efdatepicker table tr td span.disabled:hover {
+  background: none;
+  color: #999999;
+  cursor: default;
+}
+.efdatepicker table tr td span.active,
+.efdatepicker table tr td span.active:hover,
+.efdatepicker table tr td span.active.disabled,
+.efdatepicker table tr td span.active.disabled:hover {
+  color: #ffffff;
+  background-color: #428bca;
+  border-color: #357ebd;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.efdatepicker table tr td span.active:hover,
+.efdatepicker table tr td span.active:hover:hover,
+.efdatepicker table tr td span.active.disabled:hover,
+.efdatepicker table tr td span.active.disabled:hover:hover,
+.efdatepicker table tr td span.active:focus,
+.efdatepicker table tr td span.active:hover:focus,
+.efdatepicker table tr td span.active.disabled:focus,
+.efdatepicker table tr td span.active.disabled:hover:focus,
+.efdatepicker table tr td span.active:active,
+.efdatepicker table tr td span.active:hover:active,
+.efdatepicker table tr td span.active.disabled:active,
+.efdatepicker table tr td span.active.disabled:hover:active,
+.efdatepicker table tr td span.active.active,
+.efdatepicker table tr td span.active:hover.active,
+.efdatepicker table tr td span.active.disabled.active,
+.efdatepicker table tr td span.active.disabled:hover.active,
+.open .dropdown-toggle.efdatepicker table tr td span.active,
+.open .dropdown-toggle.efdatepicker table tr td span.active:hover,
+.open .dropdown-toggle.efdatepicker table tr td span.active.disabled,
+.open .dropdown-toggle.efdatepicker table tr td span.active.disabled:hover {
+  color: #ffffff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+.efdatepicker table tr td span.active:active,
+.efdatepicker table tr td span.active:hover:active,
+.efdatepicker table tr td span.active.disabled:active,
+.efdatepicker table tr td span.active.disabled:hover:active,
+.efdatepicker table tr td span.active.active,
+.efdatepicker table tr td span.active:hover.active,
+.efdatepicker table tr td span.active.disabled.active,
+.efdatepicker table tr td span.active.disabled:hover.active,
+.open .dropdown-toggle.efdatepicker table tr td span.active,
+.open .dropdown-toggle.efdatepicker table tr td span.active:hover,
+.open .dropdown-toggle.efdatepicker table tr td span.active.disabled,
+.open .dropdown-toggle.efdatepicker table tr td span.active.disabled:hover {
+  background-image: none;
+}
+.efdatepicker table tr td span.active.disabled,
+.efdatepicker table tr td span.active:hover.disabled,
+.efdatepicker table tr td span.active.disabled.disabled,
+.efdatepicker table tr td span.active.disabled:hover.disabled,
+.efdatepicker table tr td span.active[disabled],
+.efdatepicker table tr td span.active:hover[disabled],
+.efdatepicker table tr td span.active.disabled[disabled],
+.efdatepicker table tr td span.active.disabled:hover[disabled],
+fieldset[disabled] .efdatepicker table tr td span.active,
+fieldset[disabled] .efdatepicker table tr td span.active:hover,
+fieldset[disabled] .efdatepicker table tr td span.active.disabled,
+fieldset[disabled] .efdatepicker table tr td span.active.disabled:hover,
+.efdatepicker table tr td span.active.disabled:hover,
+.efdatepicker table tr td span.active:hover.disabled:hover,
+.efdatepicker table tr td span.active.disabled.disabled:hover,
+.efdatepicker table tr td span.active.disabled:hover.disabled:hover,
+.efdatepicker table tr td span.active[disabled]:hover,
+.efdatepicker table tr td span.active:hover[disabled]:hover,
+.efdatepicker table tr td span.active.disabled[disabled]:hover,
+.efdatepicker table tr td span.active.disabled:hover[disabled]:hover,
+fieldset[disabled] .efdatepicker table tr td span.active:hover,
+fieldset[disabled] .efdatepicker table tr td span.active:hover:hover,
+fieldset[disabled] .efdatepicker table tr td span.active.disabled:hover,
+fieldset[disabled] .efdatepicker table tr td span.active.disabled:hover:hover,
+.efdatepicker table tr td span.active.disabled:focus,
+.efdatepicker table tr td span.active:hover.disabled:focus,
+.efdatepicker table tr td span.active.disabled.disabled:focus,
+.efdatepicker table tr td span.active.disabled:hover.disabled:focus,
+.efdatepicker table tr td span.active[disabled]:focus,
+.efdatepicker table tr td span.active:hover[disabled]:focus,
+.efdatepicker table tr td span.active.disabled[disabled]:focus,
+.efdatepicker table tr td span.active.disabled:hover[disabled]:focus,
+fieldset[disabled] .efdatepicker table tr td span.active:focus,
+fieldset[disabled] .efdatepicker table tr td span.active:hover:focus,
+fieldset[disabled] .efdatepicker table tr td span.active.disabled:focus,
+fieldset[disabled] .efdatepicker table tr td span.active.disabled:hover:focus,
+.efdatepicker table tr td span.active.disabled:active,
+.efdatepicker table tr td span.active:hover.disabled:active,
+.efdatepicker table tr td span.active.disabled.disabled:active,
+.efdatepicker table tr td span.active.disabled:hover.disabled:active,
+.efdatepicker table tr td span.active[disabled]:active,
+.efdatepicker table tr td span.active:hover[disabled]:active,
+.efdatepicker table tr td span.active.disabled[disabled]:active,
+.efdatepicker table tr td span.active.disabled:hover[disabled]:active,
+fieldset[disabled] .efdatepicker table tr td span.active:active,
+fieldset[disabled] .efdatepicker table tr td span.active:hover:active,
+fieldset[disabled] .efdatepicker table tr td span.active.disabled:active,
+fieldset[disabled] .efdatepicker table tr td span.active.disabled:hover:active,
+.efdatepicker table tr td span.active.disabled.active,
+.efdatepicker table tr td span.active:hover.disabled.active,
+.efdatepicker table tr td span.active.disabled.disabled.active,
+.efdatepicker table tr td span.active.disabled:hover.disabled.active,
+.efdatepicker table tr td span.active[disabled].active,
+.efdatepicker table tr td span.active:hover[disabled].active,
+.efdatepicker table tr td span.active.disabled[disabled].active,
+.efdatepicker table tr td span.active.disabled:hover[disabled].active,
+fieldset[disabled] .efdatepicker table tr td span.active.active,
+fieldset[disabled] .efdatepicker table tr td span.active:hover.active,
+fieldset[disabled] .efdatepicker table tr td span.active.disabled.active,
+fieldset[disabled] .efdatepicker table tr td span.active.disabled:hover.active {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+.efdatepicker table tr td span.old,
+.efdatepicker table tr td span.new {
+  color: #999999;
+}
+.efdatepicker th.efdatepicker-switch {
+  width: 145px;
+}
+.efdatepicker thead tr:first-child th,
+.efdatepicker tfoot tr th {
+  cursor: pointer;
+}
+.efdatepicker thead tr:first-child th:hover,
+.efdatepicker tfoot tr th:hover {
+  background: #eeeeee;
+}
+.efdatepicker .cw {
+  font-size: 10px;
+  width: 12px;
+  padding: 0 2px 0 5px;
+  vertical-align: middle;
+}
+.efdatepicker thead tr:first-child th.cw {
+  cursor: default;
+  background-color: transparent;
+}
+.input-group.date .input-group-addon i {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+.input-daterange input {
+  text-align: center;
+}
+.input-daterange input:first-child {
+  border-radius: 3px 0 0 3px;
+}
+.input-daterange input:last-child {
+  border-radius: 0 3px 3px 0;
+}
+.input-daterange .input-group-addon {
+  width: auto;
+  min-width: 16px;
+  padding: 4px 5px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  text-shadow: 0 1px 0 #fff;
+  vertical-align: middle;
+  background-color: #eeeeee;
+  border: solid #cccccc;
+  border-width: 1px 0;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+.efdatepicker.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  display: none;
+  min-width: 160px;
+  list-style: none;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+  color: #333333;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.42857143;
+}
+.efdatepicker.dropdown-menu th,
+.efdatepicker.dropdown-menu td {
+  padding: 4px 5px;
+}
